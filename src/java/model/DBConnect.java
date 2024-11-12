@@ -32,7 +32,7 @@ public class DBConnect {
     }
 
     public DBConnect() {
-        this("jdbc:sqlserver://localhost:1433;databaseName=SHOP", "sa", "sa123");
+        this("jdbc:sqlserver://localhost:1433;databaseName=SHOP", "sa", "123");
     }
 
     public ResultSet getData(String sql) {
@@ -44,15 +44,7 @@ public class DBConnect {
             rs = statement.executeQuery(sql);
         } catch (SQLException ex) {
             ex.printStackTrace();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+        } 
         return rs;
     }
 
